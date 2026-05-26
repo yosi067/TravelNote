@@ -1,0 +1,19 @@
+{
+  "name": "travel-os-backend",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon --legacy-watch src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "cors": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "pg": "latest"
+  },
+  "devDependencies": {
+    "nodemon": "latest"
+  }
+}
