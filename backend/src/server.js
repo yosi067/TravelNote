@@ -5,7 +5,7 @@ const express = require("express");
 const { Pool } = require("pg");
 
 const app = express();
-const port = Number(process.env.BACKEND_PORT || 3000);
+const port = Number(process.env.PORT || 3000);
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   max: 8,
@@ -179,6 +179,13 @@ async function scanFutureTrips() {
 app.get("/api/health", async (request, response) => {
   const db = await pool.query("SELECT NOW() AS now");
   response.json({ status: "ok", database_time: db.rows[0].now });
+});
+
+app.get("/api/config/maps", (request, response) => {
+  response.json({
+    apiKey: process.env.Maps_API_KEY || "",
+    enabled: Boolean(process.env.Maps_API_KEY && process.env.Maps_API_KEY !== "replace-with-your-google-maps-api-key"),
+  });
 });
 
 app.get("/api/trips", async (request, response) => {

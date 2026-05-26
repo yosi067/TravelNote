@@ -44,6 +44,7 @@ database  -> PostgreSQL Alpine, persistent named volume
 - 已設定每個服務從 `.env` 讀取 port、資料庫連線與硬體資源限制，記憶體上限預設皆不超過 500MB。
 - 已建立 Nginx reverse proxy：靜態資源由 gateway 直接服務，`/api/*` 轉發到 backend。
 - 已建立前端 Apple 風格基底：滿版地圖舞台、毛玻璃頂部列、右側資訊面板、底部時間線、新增旅程抽屜表單。
+- 已串接 Google Maps JavaScript API，前端會透過 backend config endpoint 讀取 `.env` 的 `Maps_API_KEY`，並以繁體中文地圖介面載入互動地圖。
 - 已建立後端 Express API：`GET/POST/PUT/DELETE /api/trips`、`/api/health`、`/api/notifications`。
 - 已完成 PostgreSQL 自動建表與 seed 邏輯，首次啟動會預填 London、Reykjavik、Da Nang 三筆旅遊資料。
 - 已加入簡易未來行程掃描排程，每小時檢查當日 future trip 並建立通知資料。
@@ -53,8 +54,6 @@ database  -> PostgreSQL Alpine, persistent named volume
 
 - 在 MacBook Pro M2 安裝 Docker Desktop，clone 此 repo，並由 `.env.example` 複製建立本機 `.env`。
 - 在 Mac 上執行 `docker compose up --build`，確認 gateway、frontend、backend、database 都能正常啟動。
-- 串接 Google Maps JavaScript API，用 `.env` 的 `Maps_API_KEY` 載入正式地圖。
-- 將目前的 CSS 地圖舞台替換為可互動 Google Map，並套用暗黑或極簡淺灰 map style。
 - 強化時間線：改為 Canvas 或更細緻的 DOM inertia scroll，補上 Past/Future 分段與 Today 呼吸燈定位邏輯。
 - 擴充 CRUD：加入編輯、刪除、照片 URL 預覽、表單防呆、同步狀態提示與錯誤處理。
 - 將 `/api/notifications` 與前端 Web Notification 串接，讓未來行程提醒能在瀏覽器顯示。

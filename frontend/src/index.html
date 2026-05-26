@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hant-TW">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Travel OS</title>
+    <title>Travel OS 旅程中樞</title>
     <style>
       :root {
         color-scheme: dark;
@@ -55,14 +55,37 @@
         background-size: 72px 72px;
       }
 
+      .google-map {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 360ms ease;
+      }
+
+      .map-stage.map-ready {
+        background: #050505;
+      }
+
+      .map-stage.map-ready .google-map {
+        opacity: 1;
+      }
+
       .map-stage::before {
         content: "";
         position: absolute;
         inset: 0;
+        z-index: 1;
+        pointer-events: none;
         background-image: url("data:image/svg+xml,%3Csvg width='1400' height='760' viewBox='0 0 1400 760' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.08' stroke-width='1.4'%3E%3Cpath d='M194 271c65-40 151-51 226-27 54 17 86 55 135 79 68 33 157 20 217-25 69-51 144-94 232-80 88 15 132 81 198 127 60 42 132 52 202 37'/%3E%3Cpath d='M139 459c100-39 194-27 282 36 70 50 154 57 231 18 83-42 159-104 258-95 91 9 149 75 225 113 78 39 172 34 244-12'/%3E%3Cpath d='M319 149c121 62 245 73 374 34 100-30 190-21 270 49'/%3E%3Cpath d='M507 621c86-50 178-69 276-48 69 15 130 48 198 64'/%3E%3C/g%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-position: center;
         background-size: min(1200px, 96vw) auto;
+        opacity: 1;
+        transition: opacity 360ms ease;
+      }
+
+      .map-stage.map-ready::before {
+        opacity: 0;
       }
 
       .glass-panel {
@@ -438,85 +461,87 @@
   </head>
   <body>
     <main class="app-shell">
-      <section class="map-stage" id="mapStage" aria-label="Travel map canvas"></section>
+      <section class="map-stage" id="mapStage" aria-label="旅程地圖">
+        <div class="google-map" id="googleMap"></div>
+      </section>
 
       <nav class="top-bar glass-panel">
         <div class="brand">
           <strong>Travel OS</strong>
-          <span>Global footprints and future timeline</span>
+          <span>回憶足跡與未來行程時間線</span>
         </div>
         <div class="controls">
-          <span class="pill" id="tripCount">Loading</span>
-          <button class="icon-button" id="openDrawer" type="button" aria-label="Add trip">+</button>
+          <span class="pill" id="tripCount">載入中</span>
+          <button class="icon-button" id="openDrawer" type="button" aria-label="新增旅程">+</button>
         </div>
       </nav>
 
       <aside class="inspector glass-panel" id="inspector" aria-live="polite"></aside>
 
-      <section class="timeline-shell glass-panel" aria-label="Travel timeline">
+      <section class="timeline-shell glass-panel" aria-label="旅程時間線">
         <div class="timeline-labels">
-          <span>Past</span>
-          <span>Today</span>
-          <span>Future</span>
+          <span>過去</span>
+          <span>今日</span>
+          <span>未來</span>
         </div>
         <div class="timeline-track" id="timelineTrack">
           <div class="timeline-inner" id="timelineInner">
             <div class="time-line"></div>
-            <div class="today-pulse" title="Today"></div>
+            <div class="today-pulse" title="今日"></div>
           </div>
         </div>
       </section>
 
-      <aside class="drawer" id="drawer" aria-label="Trip editor">
+      <aside class="drawer" id="drawer" aria-label="旅程編輯器">
         <header>
-          <h2>New Trip</h2>
-          <button class="icon-button" id="closeDrawer" type="button" aria-label="Close">x</button>
+          <h2>新增旅程</h2>
+          <button class="icon-button" id="closeDrawer" type="button" aria-label="關閉">x</button>
         </header>
         <form class="form-grid" id="tripForm">
           <label class="field">
-            <span>Name</span>
-            <input name="title" required maxlength="120" placeholder="London winter archive" />
+            <span>名稱</span>
+            <input name="title" required maxlength="120" placeholder="倫敦冬日散步紀錄" />
           </label>
           <label class="field">
-            <span>Location</span>
-            <input name="location" required maxlength="160" placeholder="London, United Kingdom" />
+            <span>地點</span>
+            <input name="location" required maxlength="160" placeholder="英國倫敦" />
           </label>
           <label class="field">
-            <span>Date</span>
+            <span>日期</span>
             <input name="trip_date" required type="date" />
           </label>
           <label class="field">
-            <span>Status</span>
+            <span>狀態</span>
             <select name="status">
-              <option value="past">Past</option>
-              <option value="future">Future</option>
+              <option value="past">過去</option>
+              <option value="future">未來</option>
             </select>
           </label>
           <label class="field">
-            <span>Latitude</span>
+            <span>緯度</span>
             <input name="latitude" required type="number" step="0.000001" placeholder="51.5072" />
           </label>
           <label class="field">
-            <span>Longitude</span>
+            <span>經度</span>
             <input name="longitude" required type="number" step="0.000001" placeholder="-0.1276" />
           </label>
           <label class="field">
-            <span>Tags</span>
-            <input name="tags" placeholder="#non-smoking #quiet-room" />
+            <span>標籤</span>
+            <input name="tags" placeholder="#非吸菸 #安靜房間" />
           </label>
           <label class="field">
-            <span>Photo URL</span>
+            <span>照片連結</span>
             <input name="photo_url" type="url" placeholder="https://example.com/photo.jpg" />
           </label>
           <label class="field">
-            <span>Diary</span>
-            <textarea name="diary" maxlength="2000" placeholder="A quiet morning walk before the city wakes."></textarea>
+            <span>旅行筆記</span>
+            <textarea name="diary" maxlength="2000" placeholder="城市醒來前，一段安靜的清晨散步。"></textarea>
           </label>
-          <button class="primary-button" type="submit">Save Trip</button>
+          <button class="primary-button" type="submit">儲存旅程</button>
           <div class="status-line" id="formStatus"></div>
         </form>
       </aside>
     </main>
-    <script type="module" src="/app.js"></script>
+    <script type="module" src="/app.js?v=20260526-zh-tw"></script>
   </body>
 </html>
