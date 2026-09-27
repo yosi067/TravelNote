@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>四段交通口語版 | 26SJO02CI-T</title>
+  <style>
+    :root { color-scheme: light; --ink: #203632; --muted: #51635f; --green: #087f75; --blue: #006c9a; --line: #cbd8d3; }
+    * { box-sizing: border-box; }
+    html { border-top: 6px solid var(--green); }
+    body { margin: 0; color: var(--ink); background: repeating-linear-gradient(0deg, #f3f6f4, #f3f6f4 31px, #ecf1ee 32px); font: 17px/1.8 "Noto Sans TC", "Microsoft JhengHei", sans-serif; letter-spacing: 0; }
+    main { max-width: 1000px; margin: auto; padding: 32px 40px 44px; background: #fff; overflow-wrap: anywhere; }
+    header { padding-bottom: 12px; }
+    h1, h2 { font-family: "Noto Serif TC", "Microsoft JhengHei", serif; line-height: 1.5; }
+    h1 { margin: 0; font-size: 30px; }
+    h2 { font-size: 24px; margin: 0 0 12px; }
+    p { margin: 10px 0; }
+    .meta, .caption { font-size: 13px; color: var(--muted); }
+    .meta { margin: 8px 0 0; }
+    .route { border-top: 2px solid var(--line); padding-top: 24px; margin-top: 24px; }
+    .day { display: block; color: var(--green); font: 700 14px/1.6 "Noto Sans TC", "Microsoft JhengHei", sans-serif; margin-bottom: 5px; }
+    .spoken { font-size: 18px; line-height: 1.9; margin-bottom: 16px; }
+    .key { border-left: 4px solid #bd7720; background: #fff7e8; padding: 9px 14px; font-size: 15px; margin: 14px 0 0; }
+    figure { margin: 0; }
+    .diagram { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 30px; background: #f2f7f5; padding: 12px 18px; }
+    .map-part { min-width: 0; }
+    .map-title { font-weight: 700; font-size: 17px; margin: 4px 0; }
+    .arrival .map-title { color: var(--blue); }
+    svg { display: block; width: 100%; height: auto; overflow: visible; }
+    svg text { fill: var(--ink); font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif; font-size: 22px; }
+    svg .sign { font-size: 15px; fill: var(--muted); }
+    svg .number { fill: #fff; font-size: 19px; font-weight: 700; text-anchor: middle; }
+    svg .stop { fill: var(--green); }
+    svg .path { fill: none; stroke: var(--green); stroke-width: 3; }
+    svg .arrow { fill: var(--green); }
+    .arrival svg .stop, .arrival svg .arrow { fill: var(--blue); }
+    .arrival svg .path { stroke: var(--blue); }
+    svg .branch { fill: #fff; stroke: #aebfb8; stroke-width: 1.5; }
+    svg .branch-label { font-size: 18px; text-anchor: middle; }
+    svg .street { font-size: 12px; text-anchor: middle; fill: var(--muted); }
+    figcaption { margin-top: 7px; }
+    .single .diagram { grid-template-columns: 1fr; max-width: 560px; }
+    ul { padding-left: 23px; margin: 12px 0; }
+    li { padding-left: 3px; margin: 10px 0; }
+    a { color: var(--blue); text-underline-offset: 3px; }
+    details { margin-top: 22px; color: var(--muted); font-size: 13px; }
+    summary { cursor: pointer; }
+    @media (max-width: 640px) {
+      main { padding: 24px 18px 32px; }
+      h1 { font-size: 27px; }
+      h2 { font-size: 22px; }
+      .spoken { font-size: 17px; }
+      .diagram { grid-template-columns: 1fr; gap: 12px; padding: 12px 14px; }
+      .map-part + .map-part { border-top: 1px dashed #aebfb8; padding-top: 12px; }
+      .single .diagram { max-width: none; }
+    }
+    @media print {
+      @page { size: A4; margin: 14mm; }
+      html { border: 0; }
+      body { background: #fff; font-size: 11pt; }
+      main { padding: 0; max-width: none; }
+      h1 { font-size: 22pt; } h2 { font-size: 17pt; }
+      .spoken { font-size: 12pt; } .key { font-size: 10pt; }
+      .route { break-inside: avoid; margin-top: 20px; padding-top: 18px; }
+      .route + .route { break-before: page; }
+      .diagram { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; print-color-adjust: exact; }
+      .map-part + .map-part { border: 0; padding-top: 0; }
+      .single .diagram { grid-template-columns: 1fr; max-width: 360px; }
+      .route.notes { break-before: auto; break-inside: auto; }
+      h2, summary { break-after: avoid; }
+      li { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body><p style="margin:0;padding:10px 16px;background:#087e83;font:15px/1.5 sans-serif"><a href="index.html" style="color:#fff">&larr; 回印尼全覽 26SJO02CI-T 總覽</a></p>
+<main>
+  <header>
+    <h1>四段交通口語版</h1>
+    <p class="meta">26SJO02CI-T · 2026/10/02–10/09 · 資料核對：2026/09/27</p>
+    <p class="caption">只列這四段，不含桃園機場動線。以下皆為自製動線示意，不是航廈／車站平面圖。</p>
+  </header>
+
+  <section class="route" id="jakarta-yogyakarta">
+    <h2><span class="day">01 · D2　10/03</span>雅加達機場 → 日惹機場</h2>
+    <p class="spoken">到機場先找<strong>自己航空公司的櫃台</strong>，拿護照報到、托運行李。辦好後跟 <strong>Domestic Departures</strong> 走，過安檢，到登機門。日惹下機後領行李，走到公共大廳，點齊人和箱子，再跟地接去搭巴士。這段是國內線，<strong>不用重新辦入境</strong>。</p>
+    <figure aria-label="雅加達國內線出發與日惹抵達動線">
+      <div class="diagram">
+        <div class="map-part">
+          <p class="map-title">雅加達｜出發</p>
+          <svg viewBox="0 0 400 342" role="img" aria-labelledby="jakarta-map-title">
+            <title id="jakarta-map-title">出發大廳，報到托運，國內線安檢，登機門</title>
+            <path class="path" d="M30 54V88 M30 136V170 M30 218V252"/>
+            <path class="arrow" d="M24 83L30 93L36 83Z M24 165L30 175L36 165Z M24 247L30 257L36 247Z"/>
+            <circle class="stop" cx="30" cy="30" r="24"/><text class="number" x="30" y="37">1</text>
+            <text x="72" y="27">出發大廳</text><text class="sign" x="72" y="53">Departures</text>
+            <circle class="stop" cx="30" cy="112" r="24"/><text class="number" x="30" y="119">2</text>
+            <text x="72" y="109">報到、托運</text><text class="sign" x="72" y="135">Check-in / Bag Drop</text>
+            <circle class="stop" cx="30" cy="194" r="24"/><text class="number" x="30" y="201">3</text>
+            <text x="72" y="191">國內出發 → 安檢</text><text class="sign" x="72" y="217">Domestic Departures / Security</text>
+            <circle class="stop" cx="30" cy="276" r="24"/><text class="number" x="30" y="283">4</text>
+            <text x="72" y="273">登機門 → 飛日惹</text><text class="sign" x="72" y="299">Gate / Boarding</text>
+          </svg>
+        </div>
+        <div class="map-part arrival">
+          <p class="map-title">飛抵日惹｜抵達</p>
+          <svg viewBox="0 0 400 342" role="img" aria-labelledby="yogyakarta-map-title">
+            <title id="yogyakarta-map-title">國內抵達，領行李，公共大廳集合，團體接車</title>
+            <path class="path" d="M30 54V88 M30 136V170 M30 218V252"/>
+            <path class="arrow" d="M24 83L30 93L36 83Z M24 165L30 175L36 165Z M24 247L30 257L36 247Z"/>
+            <circle class="stop" cx="30" cy="30" r="24"/><text class="number" x="30" y="37">5</text>
+            <text x="72" y="27">跟「國內抵達」走</text><text class="sign" x="72" y="53">Domestic Arrivals</text>
+            <circle class="stop" cx="30" cy="112" r="24"/><text class="number" x="30" y="119">6</text>
+            <text x="72" y="109">看班號、領行李</text><text class="sign" x="72" y="135">Baggage Claim</text>
+            <circle class="stop" cx="30" cy="194" r="24"/><text class="number" x="30" y="201">7</text>
+            <text x="72" y="191">公共大廳集合</text><text class="sign" x="72" y="217">Exit / Keluar</text>
+            <circle class="stop" cx="30" cy="276" r="24"/><text class="number" x="30" y="283">8</text>
+            <text x="72" y="273">跟地接去搭巴士</text><text class="sign" x="72" y="299">Group Pick-up</text>
+          </svg>
+        </div>
+      </div>
+      <figcaption class="caption">航廈入口若另有證件或安全檢查，依現場安排。</figcaption>
+    </figure>
+    <p class="key"><strong>先看票：</strong>雅加達是 CGK 還是 HLP？日惹是 YIA 還是 JOG？它們是不同機場，不能混用；本團目前還沒核實。</p>
+  </section>
+
+  <section class="route" id="yogyakarta-surabaya">
+    <h2><span class="day">02 · D4　10/05</span>日惹 → 火車 → 泗水</h2>
+    <p class="spoken">到<strong>車票上的車站</strong>，先確認手上是有效登車證；只有訂位回條，就先問櫃台換證。拿護照和票過驗票口，跟站務找月台，再看<strong>車廂號、座位號</strong>。到泗水下車先點人點箱，問地接接哪個出口，再一起出去找巴士。</p>
+    <figure aria-label="日惹搭火車及 Gubeng 東西出口二選一示意">
+      <div class="diagram">
+        <div class="map-part">
+          <p class="map-title">日惹｜上火車</p>
+          <svg viewBox="0 0 400 342" role="img" aria-labelledby="train-map-title">
+            <title id="train-map-title">報到換證，護照及登車證查驗，確認月台，按車廂座位上車</title>
+            <path class="path" d="M30 54V88 M30 136V170 M30 218V252"/>
+            <path class="arrow" d="M24 83L30 93L36 83Z M24 165L30 175L36 165Z M24 247L30 257L36 247Z"/>
+            <circle class="stop" cx="30" cy="30" r="24"/><text class="number" x="30" y="37">1</text>
+            <text x="72" y="27">報到／換證（需要時）</text><text class="sign" x="72" y="53">Check-in / Cetak Boarding Pass</text>
+            <circle class="stop" cx="30" cy="112" r="24"/><text class="number" x="30" y="119">2</text>
+            <text x="72" y="109">護照＋登車證驗票</text><text class="sign" x="72" y="135">Boarding</text>
+            <circle class="stop" cx="30" cy="194" r="24"/><text class="number" x="30" y="201">3</text>
+            <text x="72" y="191">確認月台／股道</text><text class="sign" x="72" y="217">Peron / Jalur</text>
+            <circle class="stop" cx="30" cy="276" r="24"/><text class="number" x="30" y="283">4</text>
+            <text x="72" y="273">認車廂、找座位</text><text class="sign" x="72" y="299">Coach / Seat</text>
+          </svg>
+        </div>
+        <div class="map-part arrival">
+          <p class="map-title">若抵達 Gubeng｜接巴士</p>
+          <svg viewBox="0 0 400 342" role="img" aria-labelledby="gubeng-map-title">
+            <title id="gubeng-map-title">下車點人點箱，確認接車出口，依站務選西側 Lama 或東側 Baru，從約定側上巴士，不能跨軌穿站</title>
+            <circle class="stop" cx="30" cy="30" r="24"/><text class="number" x="30" y="37">5</text>
+            <text x="72" y="27">下車、點人點箱</text><text class="sign" x="72" y="53">Surabaya Gubeng / SGU</text>
+            <path class="path" d="M30 54V79"/><path class="arrow" d="M24 74L30 84L36 74Z"/>
+            <text x="12" y="111">先問地接：在哪一側接？</text>
+            <path class="path" d="M200 126V140H99V158 M200 140H301V158"/>
+            <path class="arrow" d="M93 153L99 163L105 153Z M295 153L301 163L307 153Z"/>
+            <rect class="branch" x="3" y="167" width="192" height="80" rx="4"/>
+            <rect class="branch" x="205" y="167" width="192" height="80" rx="4"/>
+            <text class="branch-label" x="99" y="195">西側 Lama / Barat</text>
+            <text class="street" x="99" y="224">Jl. Stasiun Gubeng</text>
+            <text class="branch-label" x="301" y="195">東側 Baru / Timur</text>
+            <text class="street" x="301" y="224">Jl. Gubeng Masjid</text>
+            <text class="branch-label" x="200" y="280">二選一，依站務開放出口走</text>
+            <text class="branch-label" x="200" y="314">約定側集合 → 巴士</text>
+          </svg>
+        </div>
+      </div>
+      <figcaption class="caption">東、西是接車選項，不是穿站路線；走錯側先聯絡，別自行跨軌。</figcaption>
+    </figure>
+    <p class="key"><strong>先看票：</strong>YK／Tugu → SGU／Gubeng 只是常見情境，還不是本團確定車票。若是 LPN 或 SBI，不能照這組車站走。</p>
+  </section>
+
+  <section class="route" id="surabaya-bali">
+    <h2><span class="day">03 · D6　10/07</span>泗水 → SUB 機場 → 峇里島 DPS</h2>
+    <p class="spoken">把<strong>航空公司、班號和航廈</strong>給司機，請他送到 SUB 出發區。報到托運後，走國內線安檢、到登機門。到 DPS 跟 <strong>Domestic Arrivals</strong> 走，領行李後到公共大廳找峇里島地接，再搭巴士。<strong>不走國際入境，也不用再辦 VOA。</strong></p>
+    <figure aria-label="SUB 國內出發與 DPS 國內抵達動線">
+      <div class="diagram">
+        <div class="map-part">
+          <p class="map-title">SUB 泗水｜出發</p>
+          <svg viewBox="0 0 400 342" role="img" aria-labelledby="sub-map-title">
+            <title id="sub-map-title">到正確 SUB 航廈，報到托運，國內線安檢，到登機門</title>
+            <path class="path" d="M30 54V88 M30 136V170 M30 218V252"/>
+            <path class="arrow" d="M24 83L30 93L36 83Z M24 165L30 175L36 165Z M24 247L30 257L36 247Z"/>
+            <circle class="stop" cx="30" cy="30" r="24"/><text class="number" x="30" y="37">1</text>
+            <text x="72" y="27">到票面指定航廈</text><text class="sign" x="72" y="53">T1 / T2 · Departures</text>
+            <circle class="stop" cx="30" cy="112" r="24"/><text class="number" x="30" y="119">2</text>
+            <text x="72" y="109">報到、托運至 DPS</text><text class="sign" x="72" y="135">Check-in / Bag Drop</text>
+            <circle class="stop" cx="30" cy="194" r="24"/><text class="number" x="30" y="201">3</text>
+            <text x="72" y="191">國內出發 → 安檢</text><text class="sign" x="72" y="217">Domestic Departures / Security</text>
+            <circle class="stop" cx="30" cy="276" r="24"/><text class="number" x="30" y="283">4</text>
+            <text x="72" y="273">登機門 → 飛峇里島</text><text class="sign" x="72" y="299">Gate / Boarding</text>
+          </svg>
+        </div>
+        <div class="map-part arrival">
+          <p class="map-title">DPS 峇里島｜國內抵達</p>
+          <svg viewBox="0 0 400 342" role="img" aria-labelledby="dps-arrival-map-title">
+            <title id="dps-arrival-map-title">國內抵達，領行李，公共大廳找地接，團體接車</title>
+            <path class="path" d="M30 54V88 M30 136V170 M30 218V252"/>
+            <path class="arrow" d="M24 83L30 93L36 83Z M24 165L30 175L36 165Z M24 247L30 257L36 247Z"/>
+            <circle class="stop" cx="30" cy="30" r="24"/><text class="number" x="30" y="37">5</text>
+            <text x="72" y="27">跟「國內抵達」走</text><text class="sign" x="72" y="53">Domestic Arrivals</text>
+            <circle class="stop" cx="30" cy="112" r="24"/><text class="number" x="30" y="119">6</text>
+            <text x="72" y="109">看班號、領行李</text><text class="sign" x="72" y="135">Baggage Claim</text>
+            <circle class="stop" cx="30" cy="194" r="24"/><text class="number" x="30" y="201">7</text>
+            <text x="72" y="191">公共大廳找地接</text><text class="sign" x="72" y="217">Exit / Keluar</text>
+            <circle class="stop" cx="30" cy="276" r="24"/><text class="number" x="30" y="283">8</text>
+            <text x="72" y="273">點齊人箱、去搭車</text><text class="sign" x="72" y="299">Group Pick-up</text>
+          </svg>
+        </div>
+      </div>
+      <figcaption class="caption">SUB 國內線不一定使用 T1，須向承運航空公司確認。</figcaption>
+    </figure>
+    <p class="key"><strong>到峇里島快一小時：</strong>WIB → WITA。手機若已自動更新，就不要再手動加一次。</p>
+  </section>
+
+  <section class="route single" id="bali-taipei">
+    <h2><span class="day">04 · D8　10/09</span>峇里島飯店 → DPS 國際線 → TPE</h2>
+    <p class="spoken">請司機送到 <strong>International Departures</strong>，不要回前幾天的國內抵達區。華航現行資料是<strong>國際航廈 3 樓、B 區 7–12 櫃台</strong>，到場再看本班螢幕。托運、領登機證後，照標示完成安檢和出境查驗，先到登機門集合，再安排購物或休息。</p>
+    <figure aria-label="DPS 國際出境返台動線">
+      <div class="diagram">
+        <div class="map-part">
+          <p class="map-title">飯店接車 → DPS 國際出發</p>
+          <svg viewBox="0 0 400 394" role="img" aria-labelledby="dps-departure-map-title">
+            <title id="dps-departure-map-title">飯店巴士到 DPS 國際出發，國際航廈三樓華航報到托運，依現場順序安檢出境，到登機門，登機飛桃園，不含桃園動線</title>
+            <path class="path" d="M30 50V70 M30 122V142 M30 194V214 M30 266V286"/>
+            <path class="arrow" d="M24 67L30 77L36 67Z M24 139L30 149L36 139Z M24 211L30 221L36 211Z M24 283L30 293L36 283Z"/>
+            <circle class="stop" cx="30" cy="26" r="24"/><text class="number" x="30" y="33">1</text>
+            <text x="72" y="27">飯店巴士 → 國際出發</text><text class="sign" x="72" y="53">International Departures</text>
+            <circle class="stop" cx="30" cy="98" r="24"/><text class="number" x="30" y="105">2</text>
+            <text x="72" y="94">3 樓華航報到、托運</text><text class="sign" x="72" y="120">China Airlines · B7–12*</text>
+            <circle class="stop" cx="30" cy="170" r="24"/><text class="number" x="30" y="177">3</text>
+            <text x="72" y="166">安檢／出境查驗</text><text class="sign" x="72" y="192">Security / Immigration*</text>
+            <circle class="stop" cx="30" cy="242" r="24"/><text class="number" x="30" y="249">4</text>
+            <text x="72" y="238">到登機門、點名</text><text class="sign" x="72" y="264">Gate</text>
+            <circle class="stop" cx="30" cy="314" r="24"/><text class="number" x="30" y="321">5</text>
+            <text x="72" y="310">登機 → 飛桃園 TPE</text><text class="sign" x="72" y="336">Boarding</text>
+            <text class="sign" x="6" y="378">* 櫃台與查驗先後，依當天螢幕和標示。</text>
+          </svg>
+        </div>
+      </div>
+    </figure>
+    <p class="key"><strong>若仍是 15:55 起飛：</strong>建議 12:55 前到航廈。14:55 是目前華航所列關櫃時點，不是集合時間。</p>
+  </section>
+
+  <section class="route notes" id="reminders">
+    <h2>最後注意這六件事</h2>
+    <ul>
+      <li><strong>前一天拿齊：</strong>兩段國內線班號、機場／航廈、火車站碼與車廂座位、接車出口。沒確認，就先問承辦，不憑圖猜。</li>
+      <li><strong>提早到：</strong>國內線建議提早 2–2.5 小時，火車 60–90 分鐘，DPS 國際線 3 小時；飯店到機場／車站的車程另算。</li>
+      <li><strong>每換一次就點一次：</strong>人數、行李、護照和票。先約集合位置，再讓客人去上廁所；少行李先找航空公司，不急著出大廳。</li>
+      <li><strong>行李各算各的：</strong>國際線額度不等於國內線。火車大箱隨人或另運先問清；隨人就自己帶上、帶下，不能擋門。</li>
+      <li><strong>看當天資訊：</strong>登機門看螢幕，火車月台問站務；月台號不是車廂號。走錯出口先聯絡，不逆行、不跨軌。</li>
+      <li><strong>峇里島：</strong>到達時比爪哇快一小時；國內抵達不代表免旅遊稅，保留本人 Love Bali 憑證。</li>
+    </ul>
+    <details>
+      <summary>資料來源與查核範圍</summary>
+      <p>沿用 2026/09/27 已核對資料：<a href="https://www.china-airlines.com/us/en/prepare-for-the-fly/information/airport-and-vip-lounge">華航機場資訊</a>、<a href="https://juanda-airport.com/en/domestic-flight/index">Juanda 國內線指引</a>、<a href="https://www.seat61.com/Indonesia.htm">Seat61 鐵路指南</a>、<a href="https://www.traveloka.com/id-id/explore/destination/perbedaan-stasiun-gubeng-lama-dan-baru-gt/609355">Gubeng 東西入口</a>、<a href="https://lovebali.baliprov.go.id/">Love Bali</a>。緩衝時間是領隊建議；本團國內機票及火車票尚未核實。</p>
+      <p>四組圖皆為本版原創流程圖，沒有把他團的入口照片、月台或巴士位置當成本團安排。完整查核紀錄見<a href="indonesia-26SJO02CI-T-transport-guide.html">詳細版手冊</a>。</p>
+    </details>
+  </section>
+</main>
+</body>
+</html>

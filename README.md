@@ -2,6 +2,12 @@
 
 Personal Travel OS is a local Docker-based prototype for a future-ready travel archive and planning system. The first phase simulates a production-style CDN split: Nginx is the gateway, static files are served directly at the edge, `/api/*` traffic is proxied to Node.js, and PostgreSQL stores persistent trip data in a named Docker volume.
 
+## 網頁入口（GitHub Pages）
+
+- 印尼全覽 8 日 26SJO02CI-T 總覽：https://yosi067.github.io/TravelNote/
+- 網站檔案在 `docs/`：`docs/index.html` 是總覽頁（手動維護），其餘頁面由 `maps/build-site.ps1` 從 `maps/` 複製並把圖片壓縮成 JPEG。
+- 更新方式：在 `maps/` 重跑對應的 `render-*.ps1`，再執行 `pwsh maps/build-site.ps1`，然後 commit、push `docs/`。
+
 ## 專案願景
 
 Travel OS 是一套個人旅遊雲端系統原型，目標同時管理「過去旅行回憶資產庫」與「未來行程規劃時間線」。第一階段先建立可攜式的本地開發架構，讓專案之後可以在 MacBook Pro M2 或 Windows 11 WSL2 之間移動，並用 Docker Compose 模擬正式環境常見的 CDN、Gateway、API、Database 分層。
