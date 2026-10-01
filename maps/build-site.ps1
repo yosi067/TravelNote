@@ -9,6 +9,7 @@ Add-Type -AssemblyName System.Drawing
 $root = $PSScriptRoot
 $docs = Join-Path (Split-Path $root -Parent) 'docs'
 $pages = @(
+    'tpe-cgk-walkthrough.html'
     'jakarta-yogyakarta-walkthrough-v2.html'
     'yogyakarta-surabaya-walkthrough.html'
     'sub-dps-walkthrough.html'
